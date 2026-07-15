@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insurance Claims Dashboard</title>
 </head>
+
 <body>
-<!-- Sidebar Start -->
+
+    <!-- Sidebar Start -->
+
     <aside>
+
         <div class="logo">
             <h1>ClaimFlow</h1>
             <p>Insurance Dashboard</p>
         </div>
+
         <nav>
             <ul>
                 <li><a href="#">Dashboard</a></li>
@@ -21,116 +27,296 @@
                 <li><a href="#">Settings</a></li>
             </ul>
         </nav>
+
         <div class="logout">
             <a href="#">Logout</a>
         </div>
+
     </aside>
+
     <!-- Sidebar End -->
-     <!-- Main Content Start -->
-     <main>
+
+
+    <!-- Main Content Start -->
+
+    <main>
+
         <!-- Header Start -->
-          <header>
-            <div class="page-title" >
+
+        <header>
+
+            <div class="page-title">
                 <h1>Dashboard</h1>
                 <p>Welcome back, Admin</p>
             </div>
+
             <div class="header-actions">
-                <div class="search-box" >
-                     <input type="text" placeholder="Search...">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search...">
                 </div>
+
                 <div class="notification">
-                    <button> Notifications</button>
+                    <button>Notifications</button>
                 </div>
-                <div class="profile" >
+
+                <div class="profile">
                     <div class="profile-info">
-                        <h1>Admin User</h1>
+                        <h3>Admin User</h3>
                         <p>Claims Specialist</p>
                     </div>
                 </div>
-            </div>
-          </header>
-           <!-- Header End -->
-            <!-- Welcome Section Start -->
-             <section class="welcome">
-    <h2>Good Morning, Admin 👋</h2>
-    <p>
-        Here is today's claim overview.
-    </p>
-</section>
-             <!-- Welcome Section End -->
-          <!-- Statistics Cards Start -->
-           <section class="statistics">
 
-            <div  class="cards-container">
-                <h3>Today's Claims</h3>
-                <p>24</p>
             </div>
 
-            <div class="card">
-            <h3>Pending Claims</h3>
-            <p>12</p>
-        </div>
+        </header>
 
-         <div class="card">
-            <h3>Approved Claims</h3>
-            <p>85</p>
-        </div>
+        <!-- Header End -->
 
-           <div class="card">
-            <h3>Rejected Claims</h3>
-            <p>5</p>
-        </div>
+
+        <!-- Welcome Section Start -->
+
+        <section class="welcome">
+
+            <h2>Good Morning, Admin 👋</h2>
+
+            <p>
+                Here is today's claim overview.
+            </p>
+
+        </section>
+
+        <!-- Welcome Section End -->
+
+
+        <!-- Statistics Cards Start -->
+
+        <section class="statistics">
+
+            <div class="cards-container">
+
+                <div class="card">
+                    <h3>Today's Claims</h3>
+                    <p>24</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pending Claims</h3>
+                    <p>12</p>
+                </div>
+
+                <div class="card">
+                    <h3>Approved Claims</h3>
+                    <p>85</p>
+                </div>
+
+                <div class="card">
+                    <h3>Rejected Claims</h3>
+                    <p>5</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Statistics Cards End -->
+
+        <!-- Claims Overview Start -->
+         <section class="claims-overview">
+            <h2>Claims Overview</h2>
+            <div class="overview-chart">
+                 <p>Chart Placeholder</p>
+            </div>
+         </section>
+         <!-- Claims Overview End -->
+
+          <!-- Assigned Tasks Start -->
+           <section class="assigned-tasks">
+            <h2>Assigned Tasks</h2>
+            <ul>
+        <li>Review Claim #2541</li>
+        <li>Call Customer</li>
+        <li>Upload Missing Documents</li>
+     </ul>
            </section>
-             <!-- Statistics Cards End -->
-              <!-- Recent Claims Table Start -->
-               <section  class="recent-claims">
-                  <h2>Recent Claims</h2>
-                  <table>
-                    <thead>
-                        <tr>
-                            <th>Claim ID</th>
-                            <th>Customer</th>
-                            <th>Insurance No</th>
-                            <th>Vehicle</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
+           <!-- Assigned Tasks End -->
 
-        <td>#2541</td>
-        <td>Ali Rezaei</td>
-        <td>INS-1025</td>
-        <td>Peugeot 206</td>
-        <td>Pending</td>
-        <td>2026/07/14</td>
-        <td>
-    <a href="#">View</a>
-        </td>
-                    </tbody>
-                  </table>
+           <!-- Notifications Start -->
+            <section class="notifications-panel">
+                 <h2>Notifications</h2>
+                 <ul>
+                    <li>New claim submitted</li>
+                    <li>Documents uploaded</li>
+                    <li>Claim approved</li>
+                 </ul>
+            </section>
+            <!-- Notifications End -->
 
-               </section>
-               <!-- Recent Claims Table End -->
-                <!-- Recent Activities Start -->
-                 <section class="activities">
-    <h2>Recent Activities</h2>
-    <ul>
-        <li>
-            Claim #2541 approved
-        </li>
-        <li>
-            New customer added
-        </li>
-        <li>
-            Claim #2518 rejected
-        </li>
-    </ul>
-</section>
-<!-- Recent Activities End -->
+
+
+
+
+        <!-- Quick Actions Start -->
+
+        <section class="quick-actions">
+
+            <h2>Quick Actions</h2>
+
+            <div class="actions-container">
+
+                <button>New Claim</button>
+
+                <button>Add Customer</button>
+
+                <button>Upload Document</button>
+
+            </div>
+
+        </section>
+
+        <!-- Quick Actions End -->
+
+
+        <!-- Claims Filters Start -->
+
+        <section class="claims-filters">
+
+            <h2>Claims Filters</h2>
+
+            <div class="filters-container">
+
+                <input type="text" placeholder="Search Claim ID">
+
+                <select>
+                    <option>All Status</option>
+                    <option>Pending</option>
+                    <option>Approved</option>
+                    <option>Rejected</option>
+                </select>
+
+                <input type="date">
+
+                <button>Filter</button>
+
+            </div>
+
+        </section>
+
+        <!-- Claims Filters End -->
+
+
+        <!-- Recent Claims Table Start -->
+
+        <section class="recent-claims">
+
+            <h2>Recent Claims</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Claim ID</th>
+                        <th>Customer</th>
+                        <th>Insurance No</th>
+                        <th>Vehicle</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>#2541</td>
+                        <td>Ali Rezaei</td>
+                        <td>INS-1025</td>
+                        <td>Peugeot 206</td>
+                        <td>Pending</td>
+                        <td>2026/07/14</td>
+
+                        <td>
+                            <a href="#">View</a>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#2542</td>
+                        <td>Sara Ahmadi</td>
+                        <td>INS-1038</td>
+                        <td>Hyundai Elantra</td>
+                        <td>Approved</td>
+                        <td>2026/07/15</td>
+
+                        <td>
+                            <a href="#">View</a>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#2543</td>
+                        <td>Reza Mohammadi</td>
+                        <td>INS-1052</td>
+                        <td>Toyota Corolla</td>
+                        <td>Rejected</td>
+                        <td>2026/07/15</td>
+
+                        <td>
+                            <a href="#">View</a>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Recent Claims Table End -->
+
+
+        <!-- Recent Activities Start -->
+
+        <section class="activities">
+
+            <h2>Recent Activities</h2>
+
+            <ul>
+
+                <li>Claim #2541 approved</li>
+
+                <li>New customer added</li>
+
+                <li>Claim #2518 rejected</li>
+
+            </ul>
+
+        </section>
+
+        <!-- Recent Activities End -->
+         <!-- Upcoming Schedule Start -->
+          <section class="schedule">
+            <h2>Upcoming Schedule</h2>
+            <ul>
+                <li>09:00 - Vehicle Inspection</li>
+                <li>11:30 - Customer Meeting</li>
+                <li>15:00 - Review Pending Claims</li>
+            </ul>
+          </section>
+          <!-- Upcoming Schedule End -->
+
     </main>
+
     <!-- Main Content End -->
+
 </body>
+
 </html>
