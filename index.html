@@ -10,70 +10,74 @@
 
 <body>
 
-    <!-- Sidebar Start -->
+    <!-- Main Layout -->
+    <div class="flex min-h-screen bg-slate-100">
 
-    <aside class="w-64 min-h-screen bg-slate-900 text-white p-6 flex flex-col" >
+        <!-- Sidebar Start -->
+        <aside class="w-64 min-h-screen bg-slate-900 text-white p-6 flex flex-col">
 
-        <div class="mb-8">
-            <h1 class="text-2xl font-bold">ClaimFlow</h1>
-            <p class="text-sm text-slate-400" >Insurance Dashboard</p>
-        </div>
-
-        <nav class="mt-8">
-            <ul class="space-y-3">
-                <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Dashboard</a></li>
-                <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Claims</a></li>
-                <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Customers</a></li>
-                <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Reports</a></li>
-                <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Settings</a></li>
-            </ul>
-        </nav>
-
-        <div class="mt-auto pt-8">
-            <a href="#" class="block rounded-lg px-4 py-3 text-red-400 hover:bg-slate-800 transition">Logout</a>
-        </div>
-
-    </aside>
-
-    <!-- Sidebar End -->
-
-
-    <!-- Main Content Start -->
-
-    <main>
-
-        <!-- Header Start -->
-
-        <header>
-
-            <div class="page-title">
-                <h1>Dashboard</h1>
-                <p>Welcome back, Admin</p>
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold">ClaimFlow</h1>
+                <p class="text-sm text-slate-400">Insurance Dashboard</p>
             </div>
 
-            <div class="header-actions">
+            <nav class="mt-8">
+                <ul class="space-y-3">
+                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Dashboard</a></li>
+                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Claims</a></li>
+                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Customers</a></li>
+                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Reports</a></li>
+                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Settings</a></li>
+                </ul>
+            </nav>
 
-                <div class="search-box">
-                    <input type="text" placeholder="Search...">
+            <div class="mt-auto pt-8">
+                <a href="#" class="block rounded-lg px-4 py-3 text-red-400 hover:bg-slate-800 transition">
+                    Logout
+                </a>
+            </div>
+
+        </aside>
+        <!-- Sidebar End -->
+
+        <!-- Main Content Start -->
+        <main class="flex-1 p-8">
+
+            <!-- Header Start -->
+            <header class="flex items-center justify-between bg-white rounded-2xl p-6 shadow-sm mb-8">
+
+                <div class="page-title">
+                    <h1 class="text-3xl font-bold text-slate-900">Dashboard</h1>
+                    <p class="mt-1 text-sm text-slate-500">Welcome back, Admin</p>
                 </div>
 
-                <div class="notification">
-                    <button>Notifications</button>
-                </div>
+                <div class="header-actions flex items-center gap-6">
 
-                <div class="profile">
-                    <div class="profile-info">
-                        <h3>Admin User</h3>
-                        <p>Claims Specialist</p>
+                   <div class="search-box relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+    <input
+        type="text"
+        placeholder="Search..."
+        class="w-64 rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+</div>
+
+                    <div class="p-2 rounded-lg hover:bg-slate-100 transition" >
+                        <button>🔔</button>
                     </div>
+
+                    <div class="profile flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-bold">
+                            A</div>
+                        <div class="profile-info flex flex-col">
+                            <h3 class="text-sm font-semibold text-slate-900">Admin User</h3>
+                            <p class="text-xs text-slate-500">Claims Specialist</p>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
-
-        </header>
-
-        <!-- Header End -->
-
+            </header>
+            <!-- Header End -->
 
         <!-- Welcome Section Start -->
 
