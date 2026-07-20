@@ -179,17 +179,37 @@
         </section>
             </div>
 
-           <!-- Notifications Start -->
-            <section class="notifications-panel">
-                 <h2>Notifications</h2>
-                 <ul>
-                    <li>New claim submitted</li>
-                    <li>Documents uploaded</li>
-                    <li>Claim approved</li>
-                 </ul>
-            </section>
-            <!-- Notifications End -->
+          <!-- Notifications Start -->
 
+<section class="mb-8">
+
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">
+        Notifications
+    </h2>
+
+    <div class="bg-white rounded-2xl shadow-sm p-6">
+
+        <ul class="space-y-4">
+
+            <li class="flex items-center p-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-sm text-slate-700">
+                📄 New claim submitted
+            </li>
+
+            <li class="flex items-center p-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-sm text-slate-700">
+                📁 Documents uploaded
+            </li>
+
+            <li class="flex items-center p-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-sm text-slate-700">
+                ✅ Claim approved
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- Notifications End -->
 
 
 
@@ -243,82 +263,193 @@
         <!-- Claims Filters End -->
 
 
-        <!-- Recent Claims Table Start -->
+      <!-- Recent Claims Table Start -->
 
-        <section class="recent-claims">
+<section class="mb-8">
 
-            <h2>Recent Claims</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">
+        Recent Claims
+    </h2>
 
-            <table>
+    <div class="bg-white rounded-2xl shadow-sm p-6">
 
-                <thead>
+        <table class="w-full text-left">
 
-                    <tr>
-                        <th>Claim ID</th>
-                        <th>Customer</th>
-                        <th>Insurance No</th>
-                        <th>Vehicle</th>
-                        <th>Status</th>
-                        <th>Date</th>
-                        <th>Action</th>
-                    </tr>
+            <thead>
 
-                </thead>
+                <tr class="border-b border-slate-200">
 
-                <tbody>
+                    <th class="py-4 text-sm font-semibold text-slate-600">
+                        Claim ID
+                    </th>
 
-                    <tr>
+                    <th class="py-4 text-sm font-semibold text-slate-600">
+                        Customer
+                    </th>
 
-                        <td>#2541</td>
-                        <td>Ali Rezaei</td>
-                        <td>INS-1025</td>
-                        <td>Peugeot 206</td>
-                        <td>Pending</td>
-                        <td>2026/07/14</td>
+                    <th class="py-4 text-sm font-semibold text-slate-600">
+                        Insurance No
+                    </th>
 
-                        <td>
-                            <a href="#">View</a>
-                        </td>
+                    <th class="py-4 text-sm font-semibold text-slate-600">
+                        Vehicle
+                    </th>
 
-                    </tr>
+                    <th class="py-4 text-sm font-semibold text-slate-600">
+                        Status
+                    </th>
 
-                    <tr>
+                    <th class="py-4 text-sm font-semibold text-slate-600">
+                        Date
+                    </th>
 
-                        <td>#2542</td>
-                        <td>Sara Ahmadi</td>
-                        <td>INS-1038</td>
-                        <td>Hyundai Elantra</td>
-                        <td>Approved</td>
-                        <td>2026/07/15</td>
+                    <th class="py-4 text-sm font-semibold text-slate-600">
+                        Action
+                    </th>
 
-                        <td>
-                            <a href="#">View</a>
-                        </td>
+                </tr>
 
-                    </tr>
+            </thead>
 
-                    <tr>
 
-                        <td>#2543</td>
-                        <td>Reza Mohammadi</td>
-                        <td>INS-1052</td>
-                        <td>Toyota Corolla</td>
-                        <td>Rejected</td>
-                        <td>2026/07/15</td>
+            <tbody>
 
-                        <td>
-                            <a href="#">View</a>
-                        </td>
 
-                    </tr>
+                <tr class="border-b border-slate-200 hover:bg-slate-50">
 
-                </tbody>
+                    <td class="py-4 text-sm text-slate-700">
+                        #2541
+                    </td>
 
-            </table>
+                    <td class="py-4 text-sm text-slate-700">
+                        Ali Rezaei
+                    </td>
 
-        </section>
+                    <td class="py-4 text-sm text-slate-700">
+                        INS-1025
+                    </td>
 
-        <!-- Recent Claims Table End -->
+                    <td class="py-4 text-sm text-slate-700">
+                        Peugeot 206
+                    </td>
+
+                    <td class="py-4">
+
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700">
+                            Pending
+                        </span>
+
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        2026/07/14
+                    </td>
+
+                    <td class="py-4">
+
+                        <a href="#" class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
+                            View
+                        </a>
+
+                    </td>
+
+                </tr>
+
+
+
+                <tr class="border-b border-slate-200 hover:bg-slate-50">
+
+                    <td class="py-4 text-sm text-slate-700">
+                        #2542
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        Sara Ahmadi
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        INS-1038
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        Hyundai Elantra
+                    </td>
+
+                    <td class="py-4">
+
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+                            Approved
+                        </span>
+
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        2026/07/15
+                    </td>
+
+                    <td class="py-4">
+
+                        <a href="#" class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
+                            View
+                        </a>
+
+                    </td>
+
+                </tr>
+
+
+
+                <tr class="border-b border-slate-200 hover:bg-slate-50">
+
+                    <td class="py-4 text-sm text-slate-700">
+                        #2543
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        Reza Mohammadi
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        INS-1052
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        Toyota Corolla
+                    </td>
+
+                    <td class="py-4">
+
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700">
+                            Rejected
+                        </span>
+
+                    </td>
+
+                    <td class="py-4 text-sm text-slate-700">
+                        2026/07/15
+                    </td>
+
+                    <td class="py-4">
+
+                        <a href="#" class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
+                            View
+                        </a>
+
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- Recent Claims Table End -->
 
          <!-- Upcoming Schedule Start -->
           <section class="schedule">
