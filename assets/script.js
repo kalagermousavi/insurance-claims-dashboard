@@ -2,6 +2,9 @@ console.log("ClaimFlow JavaScript is connected!");
 
 const notificationBtn = document.querySelector("#notification-btn");
 const notificationPanel = document.querySelector("#notification-panel");
+const newClaimBtn = document.querySelector("#newClaimBtn");
+const addCustomerBtn = document.querySelector("#addCustomerBtn");
+const uploadDocumentBtn = document.querySelector("#uploadDocumentBtn");
 const searchInput = document.querySelector("#search-input");
 const claimsTableBody = document.querySelector("#claims-table-body");
 const claims = [
@@ -37,4 +40,15 @@ notificationBtn.addEventListener("click", function () {
   console.log("Notification button clicked!");
 
   notificationPanel.classList.toggle("hidden");
+});
+newClaimBtn.addEventListener("click", function () {
+  alert("Creating a new claim...");
+});
+
+addCustomerBtn.addEventListener("click", function () {
+  alert("Adding a new customer...");
+});
+
+uploadDocumentBtn.addEventListener("click", function () {
+  alert("Uploading document...");
 });
