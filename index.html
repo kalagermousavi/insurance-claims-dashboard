@@ -8,222 +8,375 @@
     <link rel="stylesheet" href="./assets/css/output.css">
 </head>
 
-<body>
+<body class="bg-slate-100 transition-colors duration-300">
 
-    <!-- Main Layout -->
-    <div class="flex min-h-screen bg-slate-100">
+   <!-- Main Layout -->
+<div class="flex min-h-screen bg-slate-100 dark:bg-slate-950">
 
-        <!-- Sidebar Start -->
-        <aside class="w-64 min-h-screen bg-slate-900 text-white p-6 flex flex-col">
+    <!-- Sidebar Start -->
+    <aside class="w-64 min-h-screen bg-slate-900 text-white p-6 flex flex-col">
 
-            <div class="mb-8">
-                <h1 class="text-2xl font-bold">ClaimFlow</h1>
-                <p class="text-sm text-slate-400">Insurance Dashboard</p>
-            </div>
+        <div class="mb-8">
+            <h1 class="text-2xl font-bold">ClaimFlow</h1>
+            <p class="text-sm text-slate-400">Insurance Dashboard</p>
+        </div>
 
-            <nav class="mt-8">
-                <ul class="space-y-3">
-                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Dashboard</a></li>
-                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Claims</a></li>
-                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Customers</a></li>
-                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Reports</a></li>
-                    <li><a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">Settings</a></li>
-                </ul>
-            </nav>
+        <nav class="mt-8">
+            <ul class="space-y-3">
+                <li>
+                    <a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">
+                        Dashboard
+                    </a>
+                </li>
 
-            <div class="mt-auto pt-8">
-                <a href="#" class="block rounded-lg px-4 py-3 text-red-400 hover:bg-slate-800 transition">
-                    Logout
-                </a>
-            </div>
+                <li>
+                    <a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">
+                        Claims
+                    </a>
+                </li>
 
-        </aside>
-        <!-- Sidebar End -->
+                <li>
+                    <a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">
+                        Customers
+                    </a>
+                </li>
 
-        <!-- Main Content Start -->
-        <main class="flex-1 p-8">
+                <li>
+                    <a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">
+                        Reports
+                    </a>
+                </li>
 
-            <!-- Header Start -->
-            <header class="flex items-center justify-between bg-white rounded-2xl p-6 shadow-sm mb-8">
-
-                <div class="page-title">
-                    <h1 class="text-3xl font-bold text-slate-900">Dashboard</h1>
-                    <p class="mt-1 text-sm text-slate-500">Welcome back, Admin</p>
-                </div>
-
-                <div class="header-actions flex items-center gap-6">
-
-                   <div class="search-box relative">
-                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
-    <input
-    id="search-input"
-        type="text"
-        placeholder="Search..."
-        class="w-64 rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
-</div>
-
-
-                    <div class="relative">
-
-    <button id="notification-btn"
-        class="p-2 rounded-lg hover:bg-slate-100 transition">
-        🔔
-    </button>
-
-    <div id="notification-panel"
-        class="hidden absolute right-0 top-12 w-72 bg-white rounded-xl shadow-lg p-4 z-10">
-
-        <h3 class="font-semibold text-slate-900 mb-3">
-            Notifications
-        </h3>
-
-        <ul class="space-y-3 text-sm text-slate-600">
-            <li>📄 New claim submitted</li>
-            <li>📁 Documents uploaded</li>
-            <li>✅ Claim approved</li>
-        </ul>
-
-    </div>
-
-</div>
-
-                    <div class="profile flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-bold">
-                            A</div>
-                        <div class="profile-info flex flex-col">
-                            <h3 class="text-sm font-semibold text-slate-900">Admin User</h3>
-                            <p class="text-xs text-slate-500">Claims Specialist</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </header>
-            <!-- Header End -->
-
-        <!-- Welcome Section Start -->
-
-        <section class="bg-white rounded-2xl shadow-sm p-6 mb-8">
-
-            <h2 class="text-2xl font-bold text-slate-800">Good Morning, Admin 👋</h2>
-
-            <p class="text-slate-500 mt-2">
-                Here is today's claim overview.
-            </p>
-
-        </section>
-
-        <!-- Welcome Section End -->
-
-
-        <!-- Statistics Cards Start -->
-
-        <section class="mb-8">
-
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-    <h3 class="text-slate-500 text-sm">📂 Total Claims</h3>
-    <p class="text-3xl font-bold text-slate-900 mt-3">126</p>
-</div>
-
-<div class="bg-white rounded-2xl p-6 shadow-sm">
-    <h3 class="text-slate-500 text-sm">⏳ Pending Claims</h3>
-    <p class="text-3xl font-bold text-slate-900 mt-3">12</p>
-</div>
-
-               
-    
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <h3 class="text-slate-500 text-sm">✅Approved Claims</h3>
-                    <p class="text-3xl font-bold text-slate-900 mt-3">85</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-    <h3 class="text-slate-500 text-sm">💰Paid Claims</h3>
-    <p class="text-3xl font-bold text-slate-900 mt-3">68</p>
-</div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <h3 class="text-slate-500 text-sm">❌Rejected Claims</h3>
-                    <p class="text-3xl font-bold text-slate-900 mt-3">5</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-    <h3 class="text-slate-500 text-sm">📄 Waiting Documents</h3>
-    <p class="text-3xl font-bold text-slate-900 mt-3">9</p>
-</div>
-
-<div class="bg-white rounded-2xl p-6 shadow-sm">
-    <h3 class="text-slate-500 text-sm">🚗 Vehicle Inspections</h3>
-    <p class="text-3xl font-bold text-slate-900 mt-3">14</p>
-</div>
-
-<div class="bg-white rounded-2xl p-6 shadow-sm">
-    <h3 class="text-slate-500 text-sm">⏱ Average Processing Time</h3>
-    <p class="text-3xl font-bold text-slate-900 mt-3">2.3 Days</p>
-</div>
-
-            </div>
-
-        </section>
-
-        <!-- Statistics Cards End -->
-
-        <!-- Claims Overview Start -->
-         <section class="mb-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Claims Overview</h2>
-            <div class="bg-white rounded-2xl shadow-sm p-6 h-80 flex items-center justify-center">
-                 <p class="text-slate-400 text-lg font-medium">Chart Placeholder</p>
-            </div>
-         </section>
-         <!-- Claims Overview End -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <!-- Assigned Tasks Start -->
-           <section class="mb-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Assigned Tasks</h2>
-            <ul class="bg-white rounded-2xl shadow-sm p-6">
-        <li class="border-b border-slate-200 pb-3"> 📄Review Claim #2541</li>
-        <li class="border-b border-slate-200 py-3">📞Call Customer</li>
-        <li class="pt-3">📤Upload Missing Documents</li>
-     </ul>
-           </section>
-           <!-- Assigned Tasks End -->
-              <!-- Recent Activities Start -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Recent Activities</h2>
-            <ul class="bg-white rounded-2xl shadow-sm p-6">
-                <li class="border-b border-slate-200 pb-3">✅Claim #2541 approved</li>
-                <li class="border-b border-slate-200 py-3">👤New customer added</li>
-                <li class="pt-3">❌Claim #2518 rejected</li>
+                <li>
+                    <a href="#" class="block rounded-lg px-4 py-3 hover:bg-slate-800 transition">
+                        Settings
+                    </a>
+                </li>
             </ul>
-        </section>
+        </nav>
+
+        <div class="mt-auto pt-8">
+            <a href="#" 
+               class="block rounded-lg px-4 py-3 text-red-400 hover:bg-slate-800 transition">
+                Logout
+            </a>
+        </div>
+
+    </aside>
+    <!-- Sidebar End -->
+
+       <!-- Main Content Start -->
+<main class="flex-1 p-8">
+
+    <!-- Header Start -->
+    <header class="flex items-center justify-between bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm mb-8">
+
+        <div class="page-title">
+            <h1 class="text-3xl font-bold text-slate-900 dark:text-white">
+                Dashboard
+            </h1>
+
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                Welcome back, Admin
+            </p>
+        </div>
+
+
+        <div class="header-actions flex items-center gap-6">
+
+
+            <div class="search-box relative">
+
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                    🔍
+                </span>
+
+                <input
+                    id="search-input"
+                    type="text"
+                    placeholder="Search..."
+                    class="w-64 rounded-xl border border-slate-200 dark:border-slate-700 
+                    bg-slate-50 dark:bg-slate-700 
+                    pl-10 pr-4 py-2 text-sm 
+                    text-slate-900 dark:text-white
+                    placeholder:text-slate-400 
+                    focus:outline-none focus:ring-2 focus:ring-blue-500 
+                    focus:border-blue-500 transition">
             </div>
 
-          <!-- Notifications Start -->
+
+
+            <div class="relative">
+
+                <button id="notification-btn"
+                    class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                    🔔
+                </button>
+
+
+                <div id="notification-panel"
+                    class="hidden absolute right-0 top-12 w-72 
+                    bg-white dark:bg-slate-800 
+                    rounded-xl shadow-lg p-4 z-10">
+
+
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-3">
+                        Notifications
+                    </h3>
+
+
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                        <li>📄 New claim submitted</li>
+                        <li>📁 Documents uploaded</li>
+                        <li>✅ Claim approved</li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+
+
+            <button
+                id="theme-toggle"
+                class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                🌙
+            </button>
+
+
+
+            <div class="profile flex items-center gap-3">
+
+                <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-bold">
+                    A
+                </div>
+
+
+                <div class="profile-info flex flex-col">
+
+                    <h3 class="text-sm font-semibold text-slate-900 dark:text-white">
+                        Admin User
+                    </h3>
+
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                        Claims Specialist
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </header>
+    <!-- Header End -->
+
+       <!-- Welcome Section Start -->
+
+<section class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-8">
+
+    <h2 class="text-2xl font-bold text-slate-800 dark:text-white">
+        Good Morning, Admin 👋
+    </h2>
+
+    <p class="text-slate-500 dark:text-slate-400 mt-2">
+        Here is today's claim overview.
+    </p>
+
+</section>
+
+<!-- Welcome Section End -->
+
+
+      <!-- Statistics Cards Start -->
 
 <section class="mb-8">
 
-    <h2 class="text-2xl font-bold text-slate-900 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">📂 Total Claims</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">126</p>
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">⏳ Pending Claims</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">12</p>
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">✅ Approved Claims</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">85</p>
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">💰 Paid Claims</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">68</p>
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">❌ Rejected Claims</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">5</p>
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">📄 Waiting Documents</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">9</p>
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">🚗 Vehicle Inspections</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">14</p>
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-slate-500 dark:text-slate-400 text-sm">⏱ Average Processing Time</h3>
+            <p class="text-3xl font-bold text-slate-900 dark:text-white mt-3">2.3 Days</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Statistics Cards End -->
+
+       <!-- Claims Overview Start -->
+
+<section class="mb-8">
+
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+        Claims Overview
+    </h2>
+
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 h-80 flex items-center justify-center">
+
+        <p class="text-slate-400 dark:text-slate-500 text-lg font-medium">
+            Chart Placeholder
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Claims Overview End -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+
+    <!-- Assigned Tasks Start -->
+    <section class="mb-8">
+
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+            Assigned Tasks
+        </h2>
+
+
+        <ul class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
+
+            <li class="border-b border-slate-200 dark:border-slate-700 pb-3 text-slate-700 dark:text-slate-200">
+                📄 Review Claim #2541
+            </li>
+
+            <li class="border-b border-slate-200 dark:border-slate-700 py-3 text-slate-700 dark:text-slate-200">
+                📞 Call Customer
+            </li>
+
+            <li class="pt-3 text-slate-700 dark:text-slate-200">
+                📤 Upload Missing Documents
+            </li>
+
+        </ul>
+
+    </section>
+    <!-- Assigned Tasks End -->
+
+
+
+    <!-- Recent Activities Start -->
+
+    <section class="mb-8">
+
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+            Recent Activities
+        </h2>
+
+
+        <ul class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
+
+            <li class="border-b border-slate-200 dark:border-slate-700 pb-3 text-slate-700 dark:text-slate-200">
+                ✅ Claim #2541 approved
+            </li>
+
+            <li class="border-b border-slate-200 dark:border-slate-700 py-3 text-slate-700 dark:text-slate-200">
+                👤 New customer added
+            </li>
+
+            <li class="pt-3 text-slate-700 dark:text-slate-200">
+                ❌ Claim #2518 rejected
+            </li>
+
+        </ul>
+
+    </section>
+
+    <!-- Recent Activities End -->
+
+</div>
+
+
+
+
+<!-- Notifications Start -->
+
+<section class="mb-8">
+
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
         Notifications
     </h2>
 
-    <div class="bg-white rounded-2xl shadow-sm p-6">
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
 
         <ul class="space-y-4">
 
-            <li class="flex items-center p-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-sm text-slate-700">
+
+            <li class="flex items-center p-4 rounded-xl 
+            bg-slate-50 dark:bg-slate-700 
+            hover:bg-slate-100 dark:hover:bg-slate-600 
+            text-sm text-slate-700 dark:text-slate-200">
+
                 📄 New claim submitted
+
             </li>
 
-            <li class="flex items-center p-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-sm text-slate-700">
+
+            <li class="flex items-center p-4 rounded-xl 
+            bg-slate-50 dark:bg-slate-700 
+            hover:bg-slate-100 dark:hover:bg-slate-600 
+            text-sm text-slate-700 dark:text-slate-200">
+
                 📁 Documents uploaded
+
             </li>
 
-            <li class="flex items-center p-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-sm text-slate-700">
+
+            <li class="flex items-center p-4 rounded-xl 
+            bg-slate-50 dark:bg-slate-700 
+            hover:bg-slate-100 dark:hover:bg-slate-600 
+            text-sm text-slate-700 dark:text-slate-200">
+
                 ✅ Claim approved
+
             </li>
+
 
         </ul>
 
@@ -234,25 +387,28 @@
 <!-- Notifications End -->
 
 
-
-
-       <!-- Quick Actions Start -->
+     <!-- Quick Actions Start -->
 
 <section class="mb-8">
 
-    <h2 class="text-2xl font-bold text-slate-900 mb-6">Quick Actions</h2>
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+        Quick Actions
+    </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-        <button id="newClaimBtn" class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-blue-700 transition duration-300">
+        <button id="newClaimBtn"
+            class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-blue-700 transition duration-300">
             ➕ New Claim
         </button>
 
-        <button id="addCustomerBtn" class="bg-emerald-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-emerald-700 transition duration-300">
+        <button id="addCustomerBtn"
+            class="bg-emerald-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-emerald-700 transition duration-300">
             👤 Add Customer
         </button>
 
-        <button id="uploadDocumentBtn" class="bg-amber-500 text-white font-semibold py-3 px-4 rounded-xl hover:bg-amber-600 transition duration-300">
+        <button id="uploadDocumentBtn"
+            class="bg-amber-500 text-white font-semibold py-3 px-4 rounded-xl hover:bg-amber-600 transition duration-300">
             📄 Upload Documents
         </button>
 
@@ -262,78 +418,110 @@
 
 <!-- Quick Actions End -->
 
-        <!-- Claims Filters Start -->
-
-        <section class="mb-8">
-
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Claims Filters</h2>
-
-            <div class="bg-white rounded-2xl shadow-sm p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-
-                <input   type="text"
-    placeholder="Search Claim ID"
-    class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-
-                <select class="w-full border border-slate-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                    <option>All Status</option>
-                    <option>Pending</option>
-                    <option>Approved</option>
-                    <option>Rejected</option>
-                </select>
-
-                <input  type="date"
-    class="w-full border border-slate-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-
-                <button   class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-blue-700 transition duration-300">Filter</button>
-
-            </div>
-
-        </section>
-
-        <!-- Claims Filters End -->
 
 
-      <!-- Recent Claims Table Start -->
+<!-- Claims Filters Start -->
 
 <section class="mb-8">
 
-    <h2 class="text-2xl font-bold text-slate-900 mb-6">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+        Claims Filters
+    </h2>
+
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+
+
+        <input
+            type="text"
+            placeholder="Search Claim ID"
+            class="w-full border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3
+            bg-white dark:bg-slate-700
+            text-slate-900 dark:text-white
+            focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+
+        <select
+            class="w-full border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3
+            bg-white dark:bg-slate-700
+            text-slate-900 dark:text-white
+            focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <option>All Status</option>
+            <option>Pending</option>
+            <option>Approved</option>
+            <option>Rejected</option>
+
+        </select>
+
+
+        <input
+            type="date"
+            class="w-full border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3
+            bg-white dark:bg-slate-700
+            text-slate-900 dark:text-white
+            focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+
+        <button
+            class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-blue-700 transition duration-300">
+            Filter
+        </button>
+
+
+    </div>
+
+</section>
+
+<!-- Claims Filters End -->
+
+
+
+<!-- Recent Claims Table Start -->
+
+<section class="mb-8">
+
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
         Recent Claims
     </h2>
 
-    <div class="bg-white rounded-2xl shadow-sm p-6">
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 overflow-x-auto">
+
 
         <table class="w-full text-left">
 
+
             <thead>
 
-                <tr class="border-b border-slate-200">
+                <tr class="border-b border-slate-200 dark:border-slate-700">
 
-                    <th class="py-4 text-sm font-semibold text-slate-600">
+
+                    <th class="py-4 text-sm font-semibold text-slate-600 dark:text-slate-300">
                         Claim ID
                     </th>
 
-                    <th class="py-4 text-sm font-semibold text-slate-600">
+                    <th class="py-4 text-sm font-semibold text-slate-600 dark:text-slate-300">
                         Customer
                     </th>
 
-                    <th class="py-4 text-sm font-semibold text-slate-600">
+                    <th class="py-4 text-sm font-semibold text-slate-600 dark:text-slate-300">
                         Insurance No
                     </th>
 
-                    <th class="py-4 text-sm font-semibold text-slate-600">
+                    <th class="py-4 text-sm font-semibold text-slate-600 dark:text-slate-300">
                         Vehicle
                     </th>
 
-                    <th class="py-4 text-sm font-semibold text-slate-600">
+                    <th class="py-4 text-sm font-semibold text-slate-600 dark:text-slate-300">
                         Status
                     </th>
 
-                    <th class="py-4 text-sm font-semibold text-slate-600">
+                    <th class="py-4 text-sm font-semibold text-slate-600 dark:text-slate-300">
                         Date
                     </th>
 
-                    <th class="py-4 text-sm font-semibold text-slate-600">
+                    <th class="py-4 text-sm font-semibold text-slate-600 dark:text-slate-300">
                         Action
                     </th>
 
@@ -345,127 +533,129 @@
             <tbody id="claimsTableBody">
 
 
-                <tr class="border-b border-slate-200 hover:bg-slate-50">
+                <tr class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700">
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         #2541
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         Ali Rezaei
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         INS-1025
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         Peugeot 206
                     </td>
 
-                    <td class="py-4">
 
+                    <td class="py-4">
                         <span class="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700">
                             Pending
                         </span>
-
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         2026/07/14
                     </td>
 
-                    <td class="py-4">
 
-                        <a href="#" class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
+                    <td class="py-4">
+                        <a href="#"
+                        class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
                             View
                         </a>
-
                     </td>
+
 
                 </tr>
 
 
 
-                <tr class="border-b border-slate-200 hover:bg-slate-50">
+                <tr class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700">
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         #2542
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         Sara Ahmadi
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         INS-1038
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         Hyundai Elantra
                     </td>
 
-                    <td class="py-4">
 
+                    <td class="py-4">
                         <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
                             Approved
                         </span>
-
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         2026/07/15
                     </td>
 
-                    <td class="py-4">
 
-                        <a href="#" class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
+                    <td class="py-4">
+                        <a href="#"
+                        class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
                             View
                         </a>
-
                     </td>
 
                 </tr>
 
 
 
-                <tr class="border-b border-slate-200 hover:bg-slate-50">
+                <tr class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700">
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         #2543
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         Reza Mohammadi
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         INS-1052
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         Toyota Corolla
                     </td>
 
-                    <td class="py-4">
 
+                    <td class="py-4">
                         <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700">
                             Rejected
                         </span>
-
                     </td>
 
-                    <td class="py-4 text-sm text-slate-700">
+
+                    <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
                         2026/07/15
                     </td>
 
-                    <td class="py-4">
 
-                        <a href="#" class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
+                    <td class="py-4">
+                        <a href="#"
+                        class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700">
                             View
                         </a>
-
                     </td>
+
 
                 </tr>
 
@@ -475,28 +665,50 @@
 
         </table>
 
+
     </div>
 
 </section>
 
 <!-- Recent Claims Table End -->
 
-         <!-- Upcoming Schedule Start -->
-          <section class="mb-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Upcoming Schedule</h2>
-            <div class="bg-white rounded-2xl shadow-sm p-6">
-            <ul class="space-y-3">
-                <li class="border-b border-slate-200 pb-3"> 🕘 09:00 - Vehicle Inspection</li>
-                <li class="border-b border-slate-200 py-3"> 👥 11:30 - Customer Meeting</li>
-                <li class="pt-3"> 📋 15:00 - Review Pending Claims</li>
-            </ul>
-            </div>
-          </section>
-          <!-- Upcoming Schedule End -->
 
-    </main>
 
-    <!-- Main Content End -->
+<!-- Upcoming Schedule Start -->
+
+<section class="mb-8">
+
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+        Upcoming Schedule
+    </h2>
+
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
+
+        <ul class="space-y-3">
+
+            <li class="border-b border-slate-200 dark:border-slate-700 pb-3 text-slate-700 dark:text-slate-200">
+                🕘 09:00 - Vehicle Inspection
+            </li>
+
+            <li class="border-b border-slate-200 dark:border-slate-700 py-3 text-slate-700 dark:text-slate-200">
+                👥 11:30 - Customer Meeting
+            </li>
+
+            <li class="pt-3 text-slate-700 dark:text-slate-200">
+                📋 15:00 - Review Pending Claims
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- Upcoming Schedule End -->
+ </main>
+
+<!-- Main Content End -->
 <script src="./assets/script.js"></script>
 </body>
 

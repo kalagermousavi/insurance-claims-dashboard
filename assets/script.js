@@ -7,6 +7,9 @@ const newClaimBtn = document.querySelector("#newClaimBtn");
 const addCustomerBtn = document.querySelector("#addCustomerBtn");
 const uploadDocumentBtn = document.querySelector("#uploadDocumentBtn");
 
+const themeToggleBtn = document.querySelector("#theme-toggle");
+console.log(themeToggleBtn);
+
 const searchInput = document.querySelector("#search-input");
 const claimsTableBody = document.querySelector("#claimsTableBody");
 
@@ -87,4 +90,9 @@ addCustomerBtn.addEventListener("click", function () {
 
 uploadDocumentBtn.addEventListener("click", function () {
   alert("Uploading document...");
+});
+themeToggleBtn.addEventListener("click", function () {
+  console.log("Theme clicked!");
+
+  document.documentElement.classList.toggle("dark");
 });
