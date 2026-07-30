@@ -91,8 +91,18 @@ addCustomerBtn.addEventListener("click", function () {
 uploadDocumentBtn.addEventListener("click", function () {
   alert("Uploading document...");
 });
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+}
+
 themeToggleBtn.addEventListener("click", function () {
   console.log("Theme clicked!");
 
   document.documentElement.classList.toggle("dark");
+
+  if (document.documentElement.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
 });
