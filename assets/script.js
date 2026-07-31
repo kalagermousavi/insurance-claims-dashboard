@@ -69,6 +69,21 @@ searchInput.addEventListener("input", function () {
 
   console.log("Search Value:", searchValue);
   console.log("Filtered Claims:", filteredClaims);
+
+  claimsTableBody.innerHTML = "";
+
+  filteredClaims.forEach(function (claim) {
+    claimsTableBody.innerHTML += `
+      <tr>
+        <td>${claim.id}</td>
+        <td>${claim.customer}</td>
+        <td>${claim.insuranceNo}</td>
+        <td>${claim.vehicle}</td>
+        <td>${claim.status}</td>
+        <td>${claim.date}</td>
+      </tr>
+    `;
+  });
 });
 
 // Notification button
