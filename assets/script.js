@@ -64,7 +64,14 @@ searchInput.addEventListener("input", function () {
   const searchValue = searchInput.value.toLowerCase();
 
   const filteredClaims = claims.filter(function (claim) {
-    return claim.customer.toLowerCase().includes(searchValue);
+    return (
+      claim.id.toLowerCase().includes(searchValue) ||
+      claim.customer.toLowerCase().includes(searchValue) ||
+      claim.insuranceNo.toLowerCase().includes(searchValue) ||
+      claim.vehicle.toLowerCase().includes(searchValue) ||
+      claim.status.toLowerCase().includes(searchValue) ||
+      claim.date.toLowerCase().includes(searchValue)
+    );
   });
 
   console.log("Search Value:", searchValue);
