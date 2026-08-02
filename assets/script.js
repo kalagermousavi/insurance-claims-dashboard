@@ -11,6 +11,7 @@ const themeToggleBtn = document.querySelector("#theme-toggle");
 console.log(themeToggleBtn);
 
 const searchInput = document.querySelector("#search-input");
+const statusFilter = document.querySelector("#statusFilter");
 const claimsTableBody = document.querySelector("#claimsTableBody");
 
 const claims = [
@@ -91,6 +92,12 @@ searchInput.addEventListener("input", function () {
       </tr>
     `;
   });
+});
+
+statusFilter.addEventListener("change", function () {
+  const selectedStatus = statusFilter.value;
+
+  console.log("Selected Status:", selectedStatus);
 });
 
 // Notification button
