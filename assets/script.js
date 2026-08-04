@@ -12,6 +12,7 @@ console.log(themeToggleBtn);
 
 const searchInput = document.querySelector("#search-input");
 const statusFilter = document.querySelector("#statusFilter");
+const dateFilter = document.querySelector("#dateFilter");
 const claimsTableBody = document.querySelector("#claimsTableBody");
 
 const claims = [
@@ -99,7 +100,7 @@ statusFilter.addEventListener("change", function () {
 
   console.log("Selected Status:", selectedStatus);
   const filteredClaims = claims.filter(function (claim) {
-    return claim.status === selectedStatus;
+    return selectedStatus === "All Status" || claim.status === selectedStatus;
   });
 
   console.log("Filtered Claims:", filteredClaims);
@@ -116,6 +117,11 @@ statusFilter.addEventListener("change", function () {
     </tr>
   `;
   });
+});
+dateFilter.addEventListener("change", function () {
+  const selectedDate = dateFilter.value;
+
+  console.log("Selected Date:", selectedDate);
 });
 
 // Notification button
