@@ -122,6 +122,11 @@ dateFilter.addEventListener("change", function () {
   const selectedDate = dateFilter.value;
 
   console.log("Selected Date:", selectedDate);
+  const filteredClaims = claims.filter(function (claim) {
+    return claim.date === selectedDate.replaceAll("-", "/");
+  });
+
+  console.log("Filtered Claims:", filteredClaims);
 });
 
 // Notification button
