@@ -177,3 +177,6 @@ themeToggleBtn.addEventListener("click", function () {
     localStorage.setItem("theme", "light");
   }
 });
+$(document).ready(function () {
+  $("#dateFilter").pDatepicker();
+});
