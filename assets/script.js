@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 console.log("ClaimFlow JavaScript is connected!");
 
 const notificationBtn = document.querySelector("#notification-btn");

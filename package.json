@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,11 @@
   "homepage": "https://github.com/kalagermousavi/insurance-claims-dashboard#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.2",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.2",
+    "vite": "^8.2.1"
+  },
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "persian-datepicker": "^1.2.0"
   }
 }
