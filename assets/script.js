@@ -180,3 +180,23 @@ themeToggleBtn.addEventListener("click", function () {
 $(document).ready(function () {
   $("#dateFilter").pDatepicker();
 });
+const filterClaimsBtn = document.querySelector("#filterClaimsBtn");
+
+filterClaimsBtn.addEventListener("click", () => {
+  const selected = $("#dateFilter").data("datepicker").model.state.selected;
+
+  if (!selected) {
+    console.log("هیچ تاریخی انتخاب نشده");
+    return;
+  }
+
+  const date = new persianDate([
+    selected.year,
+    selected.month,
+    selected.date,
+  ]).toDate();
+
+  const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}`;
+
+  console.log("تاریخ انتخاب‌شده:", formattedDate);
+});
