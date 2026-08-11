@@ -199,4 +199,15 @@ filterClaimsBtn.addEventListener("click", () => {
   const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}`;
 
   console.log("تاریخ انتخاب‌شده:", formattedDate);
+  const rows = document.querySelectorAll("#claimsTableBody tr");
+
+  rows.forEach((row) => {
+    const claimDate = row.children[5].textContent.trim();
+
+    if (claimDate === formattedDate) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
 });
