@@ -8,12 +8,13 @@ const addCustomerBtn = document.querySelector("#addCustomerBtn");
 const uploadDocumentBtn = document.querySelector("#uploadDocumentBtn");
 
 const themeToggleBtn = document.querySelector("#theme-toggle");
-console.log(themeToggleBtn);
 
 const searchInput = document.querySelector("#search-input");
 const statusFilter = document.querySelector("#statusFilter");
 const dateFilter = document.querySelector("#dateFilter");
 const claimsTableBody = document.querySelector("#claimsTableBody");
+
+const filterClaimsBtn = document.querySelector("#filterClaimsBtn");
 
 const claims = [
   {
@@ -41,43 +42,26 @@ const claims = [
     date: "2026/07/15",
   },
 ];
-let rows = "";
 
-claims.forEach(function (claim) {
-  rows += `
-  <tr>
-    <td>${claim.id}</td>
-    <td>${claim.customer}</td>
-    <td>${claim.insuranceNo}</td>
-    <td>${claim.vehicle}</td>
-    <td>${claim.status}</td>
-    <td>${claim.date}</td>
-  </tr>
-  `;
-});
-
-claimsTableBody.innerHTML = rows;
-
-console.log(claims);
-console.log(claimsTableBody);
-
-// Search
-searchInput.addEventListener("input", function () {
-  const searchValue = searchInput.value.toLowerCase();
+// نمایش جدول
+function renderClaims() {
+  const searchValue = searchInput.value.toLowerCase().trim();
+  const selectedStatus = statusFilter.value;
 
   const filteredClaims = claims.filter(function (claim) {
-    return (
+    const matchesSearch =
       claim.id.toLowerCase().includes(searchValue) ||
       claim.customer.toLowerCase().includes(searchValue) ||
       claim.insuranceNo.toLowerCase().includes(searchValue) ||
       claim.vehicle.toLowerCase().includes(searchValue) ||
       claim.status.toLowerCase().includes(searchValue) ||
-      claim.date.toLowerCase().includes(searchValue)
-    );
-  });
+      claim.date.toLowerCase().includes(searchValue);
 
-  console.log("Search Value:", searchValue);
-  console.log("Filtered Claims:", filteredClaims);
+    const matchesStatus =
+      selectedStatus === "All Status" || claim.status === selectedStatus;
+
+    return matchesSearch && matchesStatus;
+  });
 
   claimsTableBody.innerHTML = "";
 
@@ -93,52 +77,60 @@ searchInput.addEventListener("input", function () {
       </tr>
     `;
   });
+
+  console.log("Filtered Claims:", filteredClaims);
+}
+
+// نمایش اولیه جدول
+renderClaims();
+
+// Search
+searchInput.addEventListener("input", function () {
+  renderClaims();
 });
 
+// Status Filter
 statusFilter.addEventListener("change", function () {
-  const selectedStatus = statusFilter.value;
-
-  console.log("Selected Status:", selectedStatus);
-  const filteredClaims = claims.filter(function (claim) {
-    return selectedStatus === "All Status" || claim.status === selectedStatus;
-  });
-
-  console.log("Filtered Claims:", filteredClaims);
-  claimsTableBody.innerHTML = "";
-  filteredClaims.forEach(function (claim) {
-    claimsTableBody.innerHTML += `
-    <tr>
-      <td>${claim.id}</td>
-      <td>${claim.customer}</td>
-      <td>${claim.insuranceNo}</td>
-      <td>${claim.vehicle}</td>
-      <td>${claim.status}</td>
-      <td>${claim.date}</td>
-    </tr>
-  `;
-  });
+  renderClaims();
 });
-dateFilter.addEventListener("change", function () {
-  const selectedDate = dateFilter.value;
 
-  console.log("Selected Date:", selectedDate);
-  const filteredClaims = claims.filter(function (claim) {
-    return claim.date === selectedDate.replaceAll("-", "/");
-  });
+// Datepicker
+$(document).ready(function () {
+  $("#dateFilter").pDatepicker();
+});
 
-  console.log("Filtered Claims:", filteredClaims);
-  claimsTableBody.innerHTML = "";
-  filteredClaims.forEach(function (claim) {
-    claimsTableBody.innerHTML += `
-    <tr>
-      <td>${claim.id}</td>
-      <td>${claim.customer}</td>
-      <td>${claim.insuranceNo}</td>
-      <td>${claim.vehicle}</td>
-      <td>${claim.status}</td>
-      <td>${claim.date}</td>
-    </tr>
-  `;
+// Date Filter Button
+filterClaimsBtn.addEventListener("click", function () {
+  const selected = $("#dateFilter").data("datepicker").model.state.selected;
+
+  if (!selected) {
+    console.log("هیچ تاریخی انتخاب نشده");
+    return;
+  }
+
+  const date = new persianDate([
+    selected.year,
+    selected.month,
+    selected.date,
+  ]).toDate();
+
+  const formattedDate =
+    `${date.getFullYear()}/` +
+    `${String(date.getMonth() + 1).padStart(2, "0")}/` +
+    `${String(date.getDate()).padStart(2, "0")}`;
+
+  console.log("تاریخ انتخاب‌شده:", formattedDate);
+
+  const rows = document.querySelectorAll("#claimsTableBody tr");
+
+  rows.forEach(function (row) {
+    const claimDate = row.children[5].textContent.trim();
+
+    if (claimDate === formattedDate) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
   });
 });
 
@@ -150,7 +142,6 @@ notificationBtn.addEventListener("click", function () {
 });
 
 // Buttons
-
 newClaimBtn.addEventListener("click", function () {
   alert("Creating a new claim...");
 });
@@ -162,6 +153,8 @@ addCustomerBtn.addEventListener("click", function () {
 uploadDocumentBtn.addEventListener("click", function () {
   alert("Uploading document...");
 });
+
+// Dark Mode
 if (localStorage.getItem("theme") === "dark") {
   document.documentElement.classList.add("dark");
 }
@@ -176,38 +169,4 @@ themeToggleBtn.addEventListener("click", function () {
   } else {
     localStorage.setItem("theme", "light");
   }
-});
-$(document).ready(function () {
-  $("#dateFilter").pDatepicker();
-});
-const filterClaimsBtn = document.querySelector("#filterClaimsBtn");
-
-filterClaimsBtn.addEventListener("click", () => {
-  const selected = $("#dateFilter").data("datepicker").model.state.selected;
-
-  if (!selected) {
-    console.log("هیچ تاریخی انتخاب نشده");
-    return;
-  }
-
-  const date = new persianDate([
-    selected.year,
-    selected.month,
-    selected.date,
-  ]).toDate();
-
-  const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}`;
-
-  console.log("تاریخ انتخاب‌شده:", formattedDate);
-  const rows = document.querySelectorAll("#claimsTableBody tr");
-
-  rows.forEach((row) => {
-    const claimDate = row.children[5].textContent.trim();
-
-    if (claimDate === formattedDate) {
-      row.style.display = "";
-    } else {
-      row.style.display = "none";
-    }
-  });
 });
