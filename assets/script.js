@@ -42,11 +42,14 @@ const claims = [
     date: "2026/07/15",
   },
 ];
+const totalClaimsCount = document.querySelector("#totalClaimsCount");
+totalClaimsCount.textContent = claims.length;
 
-// نمایش جدول
+// نمایش و فیلتر جدول
 function renderClaims() {
   const searchValue = searchInput.value.toLowerCase().trim();
   const selectedStatus = statusFilter.value;
+  const selectedDate = dateFilter.dataset.selectedDate || "";
 
   const filteredClaims = claims.filter(function (claim) {
     const matchesSearch =
@@ -60,7 +63,9 @@ function renderClaims() {
     const matchesStatus =
       selectedStatus === "All Status" || claim.status === selectedStatus;
 
-    return matchesSearch && matchesStatus;
+    const matchesDate = selectedDate === "" || claim.date === selectedDate;
+
+    return matchesSearch && matchesStatus && matchesDate;
   });
 
   claimsTableBody.innerHTML = "";
@@ -94,12 +99,12 @@ statusFilter.addEventListener("change", function () {
   renderClaims();
 });
 
-// Datepicker
+// Persian Datepicker
 $(document).ready(function () {
   $("#dateFilter").pDatepicker();
 });
 
-// Date Filter Button
+// Date Filter
 filterClaimsBtn.addEventListener("click", function () {
   const selected = $("#dateFilter").data("datepicker").model.state.selected;
 
@@ -119,19 +124,11 @@ filterClaimsBtn.addEventListener("click", function () {
     `${String(date.getMonth() + 1).padStart(2, "0")}/` +
     `${String(date.getDate()).padStart(2, "0")}`;
 
+  dateFilter.dataset.selectedDate = formattedDate;
+
   console.log("تاریخ انتخاب‌شده:", formattedDate);
 
-  const rows = document.querySelectorAll("#claimsTableBody tr");
-
-  rows.forEach(function (row) {
-    const claimDate = row.children[5].textContent.trim();
-
-    if (claimDate === formattedDate) {
-      row.style.display = "";
-    } else {
-      row.style.display = "none";
-    }
-  });
+  renderClaims();
 });
 
 // Notification button
