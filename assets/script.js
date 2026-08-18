@@ -45,6 +45,14 @@ const claims = [
 const totalClaimsCount = document.querySelector("#totalClaimsCount");
 totalClaimsCount.textContent = claims.length;
 
+const pendingClaimsCount = document.querySelector("#pendingClaimsCount");
+
+pendingClaimsCount.textContent = claims.filter(function (claim) {
+  return claim.status === "Pending";
+}).length;
+
+console.log("✅ Pending Claims:", pendingClaimsCount.textContent);
+
 // نمایش و فیلتر جدول
 function renderClaims() {
   const searchValue = searchInput.value.toLowerCase().trim();
