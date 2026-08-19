@@ -53,6 +53,14 @@ pendingClaimsCount.textContent = claims.filter(function (claim) {
 
 console.log("✅ Pending Claims:", pendingClaimsCount.textContent);
 
+const approvedClaimsCount = document.querySelector("#approvedClaimsCount");
+
+approvedClaimsCount.textContent = claims.filter(function (claim) {
+  return claim.status === "Approved";
+}).length;
+
+console.log("✅ Approved Claims:", approvedClaimsCount.textContent);
+
 // نمایش و فیلتر جدول
 function renderClaims() {
   const searchValue = searchInput.value.toLowerCase().trim();
