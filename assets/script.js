@@ -69,6 +69,14 @@ rejectedClaimsCount.textContent = claims.filter(function (claim) {
 
 console.log("✅ Rejected Claims:", rejectedClaimsCount.textContent);
 
+const paidClaimsCount = document.querySelector("#paidClaimsCount");
+
+paidClaimsCount.textContent = claims.filter(function (claim) {
+  return claim.status === "Paid";
+}).length;
+
+console.log("✅ Paid Claims:", paidClaimsCount.textContent);
+
 // نمایش و فیلتر جدول
 function renderClaims() {
   const searchValue = searchInput.value.toLowerCase().trim();
