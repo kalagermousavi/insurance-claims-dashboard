@@ -23,6 +23,8 @@ const claims = [
     insuranceNo: "INS-1025",
     vehicle: "Peugeot 206",
     status: "Pending",
+    inspectionStatus: "Required",
+    documentsStatus: "Waiting",
     date: "2026/07/14",
   },
   {
@@ -31,6 +33,8 @@ const claims = [
     insuranceNo: "INS-1038",
     vehicle: "Hyundai Elantra",
     status: "Approved",
+    inspectionStatus: "Completed",
+    documentsStatus: "Complete",
     date: "2026/07/15",
   },
   {
@@ -39,6 +43,8 @@ const claims = [
     insuranceNo: "INS-1052",
     vehicle: "Toyota Corolla",
     status: "Rejected",
+    inspectionStatus: "Completed",
+    documentsStatus: "Complete",
     date: "2026/07/15",
   },
 ];
@@ -52,6 +58,14 @@ pendingClaimsCount.textContent = claims.filter(function (claim) {
 }).length;
 
 console.log("✅ Pending Claims:", pendingClaimsCount.textContent);
+ 
+const waitingDocumentsCount = document.querySelector("#waitingDocumentsCount");
+
+waitingDocumentsCount.textContent = claims.filter(function (claim) {
+  return claim.documentsStatus === "Waiting";
+}).length;
+
+console.log("✅ Waiting Documents:", waitingDocumentsCount.textContent);
 
 const approvedClaimsCount = document.querySelector("#approvedClaimsCount");
 
@@ -76,6 +90,12 @@ paidClaimsCount.textContent = claims.filter(function (claim) {
 }).length;
 
 console.log("✅ Paid Claims:", paidClaimsCount.textContent);
+
+const vehicleInspectionsCount = document.querySelector("#vehicleInspectionsCount");
+
+vehicleInspectionsCount.textContent = claims.filter(
+  claim => claim.inspectionStatus === "Required"
+).length;
 
 // نمایش و فیلتر جدول
 function renderClaims() {
