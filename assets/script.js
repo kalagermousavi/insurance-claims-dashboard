@@ -24,8 +24,11 @@ const claims = [
     vehicle: "Peugeot 206",
     status: "Pending",
     inspectionStatus: "Required",
+processingTime: 2,
+    inspectionStatus: "Required",
     documentsStatus: "Waiting",
     date: "2026/07/14",
+   
   },
   {
     id: "#2542",
@@ -34,8 +37,11 @@ const claims = [
     vehicle: "Hyundai Elantra",
     status: "Approved",
     inspectionStatus: "Completed",
+processingTime: 3,
+    inspectionStatus: "Completed",
     documentsStatus: "Complete",
     date: "2026/07/15",
+    
   },
   {
     id: "#2543",
@@ -44,10 +50,24 @@ const claims = [
     vehicle: "Toyota Corolla",
     status: "Rejected",
     inspectionStatus: "Completed",
+processingTime: 4,
+    inspectionStatus: "Completed",
     documentsStatus: "Complete",
     date: "2026/07/15",
+    processingTime: 2,
   },
 ];
+const averageProcessingTime = document.querySelector("#averageProcessingTime");
+
+const totalProcessingTime = claims.reduce(function (total, claim) {
+  return total + claim.processingTime;
+}, 0);
+
+const averageTime = totalProcessingTime / claims.length;
+
+averageProcessingTime.textContent = averageTime + " Days";
+
+console.log("✅ Average Processing Time:", averageProcessingTime.textContent);
 const totalClaimsCount = document.querySelector("#totalClaimsCount");
 totalClaimsCount.textContent = claims.length;
 
