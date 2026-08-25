@@ -65,7 +65,7 @@ const totalProcessingTime = claims.reduce(function (total, claim) {
 
 const averageTime = totalProcessingTime / claims.length;
 
-averageProcessingTime.textContent = averageTime + " Days";
+averageProcessingTime.textContent = Math.round(averageTime) + " Days";
 
 console.log("✅ Average Processing Time:", averageProcessingTime.textContent);
 const totalClaimsCount = document.querySelector("#totalClaimsCount");
