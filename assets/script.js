@@ -16,6 +16,7 @@ const claimsTableBody = document.querySelector("#claimsTableBody");
 
 const filterClaimsBtn = document.querySelector("#filterClaimsBtn");
 
+// Claims Data
 const claims = [
   {
     id: "#2541",
@@ -24,12 +25,11 @@ const claims = [
     vehicle: "Peugeot 206",
     status: "Pending",
     inspectionStatus: "Required",
-processingTime: 2,
-    inspectionStatus: "Required",
+    processingTime: 2,
     documentsStatus: "Waiting",
     date: "2026/07/14",
-   
   },
+
   {
     id: "#2542",
     customer: "Sara Ahmadi",
@@ -37,12 +37,11 @@ processingTime: 2,
     vehicle: "Hyundai Elantra",
     status: "Approved",
     inspectionStatus: "Completed",
-processingTime: 3,
-    inspectionStatus: "Completed",
+    processingTime: 3,
     documentsStatus: "Complete",
     date: "2026/07/15",
-    
   },
+
   {
     id: "#2543",
     customer: "Reza Mohammadi",
@@ -50,13 +49,13 @@ processingTime: 3,
     vehicle: "Toyota Corolla",
     status: "Rejected",
     inspectionStatus: "Completed",
-processingTime: 4,
-    inspectionStatus: "Completed",
+    processingTime: 4,
     documentsStatus: "Complete",
     date: "2026/07/15",
-    processingTime: 2,
   },
 ];
+
+// Average Processing Time
 const averageProcessingTime = document.querySelector("#averageProcessingTime");
 
 const totalProcessingTime = claims.reduce(function (total, claim) {
@@ -67,10 +66,17 @@ const averageTime = totalProcessingTime / claims.length;
 
 averageProcessingTime.textContent = Math.round(averageTime) + " Days";
 
-console.log("✅ Average Processing Time:", averageProcessingTime.textContent);
+console.log(
+  "✅ Average Processing Time:",
+  averageProcessingTime.textContent
+);
+
+// Total Claims
 const totalClaimsCount = document.querySelector("#totalClaimsCount");
+
 totalClaimsCount.textContent = claims.length;
 
+// Pending Claims
 const pendingClaimsCount = document.querySelector("#pendingClaimsCount");
 
 pendingClaimsCount.textContent = claims.filter(function (claim) {
@@ -78,31 +84,44 @@ pendingClaimsCount.textContent = claims.filter(function (claim) {
 }).length;
 
 console.log("✅ Pending Claims:", pendingClaimsCount.textContent);
- 
+
+// Waiting Documents
 const waitingDocumentsCount = document.querySelector("#waitingDocumentsCount");
 
 waitingDocumentsCount.textContent = claims.filter(function (claim) {
   return claim.documentsStatus === "Waiting";
 }).length;
 
-console.log("✅ Waiting Documents:", waitingDocumentsCount.textContent);
+console.log(
+  "✅ Waiting Documents:",
+  waitingDocumentsCount.textContent
+);
 
+// Approved Claims
 const approvedClaimsCount = document.querySelector("#approvedClaimsCount");
 
 approvedClaimsCount.textContent = claims.filter(function (claim) {
   return claim.status === "Approved";
 }).length;
 
-console.log("✅ Approved Claims:", approvedClaimsCount.textContent);
+console.log(
+  "✅ Approved Claims:",
+  approvedClaimsCount.textContent
+);
 
+// Rejected Claims
 const rejectedClaimsCount = document.querySelector("#rejectedClaimsCount");
 
 rejectedClaimsCount.textContent = claims.filter(function (claim) {
   return claim.status === "Rejected";
 }).length;
 
-console.log("✅ Rejected Claims:", rejectedClaimsCount.textContent);
+console.log(
+  "✅ Rejected Claims:",
+  rejectedClaimsCount.textContent
+);
 
+// Paid Claims
 const paidClaimsCount = document.querySelector("#paidClaimsCount");
 
 paidClaimsCount.textContent = claims.filter(function (claim) {
@@ -111,13 +130,21 @@ paidClaimsCount.textContent = claims.filter(function (claim) {
 
 console.log("✅ Paid Claims:", paidClaimsCount.textContent);
 
-const vehicleInspectionsCount = document.querySelector("#vehicleInspectionsCount");
+// Vehicle Inspections
+const vehicleInspectionsCount = document.querySelector(
+  "#vehicleInspectionsCount"
+);
 
-vehicleInspectionsCount.textContent = claims.filter(
-  claim => claim.inspectionStatus === "Required"
-).length;
+vehicleInspectionsCount.textContent = claims.filter(function (claim) {
+  return claim.inspectionStatus === "Required";
+}).length;
 
-// نمایش و فیلتر جدول
+console.log(
+  "✅ Vehicle Inspections:",
+  vehicleInspectionsCount.textContent
+);
+
+// Render Claims Table
 function renderClaims() {
   const searchValue = searchInput.value.toLowerCase().trim();
   const selectedStatus = statusFilter.value;
@@ -133,9 +160,12 @@ function renderClaims() {
       claim.date.toLowerCase().includes(searchValue);
 
     const matchesStatus =
-      selectedStatus === "All Status" || claim.status === selectedStatus;
+      selectedStatus === "All Status" ||
+      claim.status === selectedStatus;
 
-    const matchesDate = selectedDate === "" || claim.date === selectedDate;
+    const matchesDate =
+      selectedDate === "" ||
+      claim.date === selectedDate;
 
     return matchesSearch && matchesStatus && matchesDate;
   });
@@ -144,13 +174,43 @@ function renderClaims() {
 
   filteredClaims.forEach(function (claim) {
     claimsTableBody.innerHTML += `
-      <tr>
-        <td>${claim.id}</td>
-        <td>${claim.customer}</td>
-        <td>${claim.insuranceNo}</td>
-        <td>${claim.vehicle}</td>
-        <td>${claim.status}</td>
-        <td>${claim.date}</td>
+      <tr class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700">
+
+        <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
+          ${claim.id}
+        </td>
+
+        <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
+          ${claim.customer}
+        </td>
+
+        <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
+          ${claim.insuranceNo}
+        </td>
+
+        <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
+          ${claim.vehicle}
+        </td>
+
+        <td class="py-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold">
+            ${claim.status}
+          </span>
+        </td>
+
+        <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
+          ${claim.date}
+        </td>
+
+        <td class="py-4">
+          <a
+            href="#"
+            class="px-3 py-1 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-700"
+          >
+            View
+          </a>
+        </td>
+
       </tr>
     `;
   });
@@ -158,7 +218,7 @@ function renderClaims() {
   console.log("Filtered Claims:", filteredClaims);
 }
 
-// نمایش اولیه جدول
+// Initial Table Render
 renderClaims();
 
 // Search
@@ -178,7 +238,9 @@ $(document).ready(function () {
 
 // Date Filter
 filterClaimsBtn.addEventListener("click", function () {
-  const selected = $("#dateFilter").data("datepicker").model.state.selected;
+  const selected = $("#dateFilter")
+    .data("datepicker")
+    .model.state.selected;
 
   if (!selected) {
     console.log("هیچ تاریخی انتخاب نشده");
@@ -203,7 +265,7 @@ filterClaimsBtn.addEventListener("click", function () {
   renderClaims();
 });
 
-// Notification button
+// Notification Button
 notificationBtn.addEventListener("click", function () {
   console.log("Notification button clicked!");
 
