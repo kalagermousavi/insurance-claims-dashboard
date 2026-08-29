@@ -172,6 +172,22 @@ function renderClaims() {
 
   claimsTableBody.innerHTML = "";
 
+  function getStatusClass(status) {
+  if (status === "Pending") {
+    return "bg-yellow-100 text-yellow-700";
+  }
+
+  if (status === "Approved") {
+    return "bg-green-100 text-green-700";
+  }
+
+  if (status === "Rejected") {
+    return "bg-red-100 text-red-700";
+  }
+
+  return "bg-slate-100 text-slate-700";
+}
+
   filteredClaims.forEach(function (claim) {
     claimsTableBody.innerHTML += `
       <tr class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700">
@@ -193,9 +209,9 @@ function renderClaims() {
         </td>
 
         <td class="py-4">
-          <span class="px-3 py-1 rounded-full text-xs font-semibold">
-            ${claim.status}
-          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold ${getStatusClass(claim.status)}">
+  ${claim.status}
+</span>
         </td>
 
         <td class="py-4 text-sm text-slate-700 dark:text-slate-200">
